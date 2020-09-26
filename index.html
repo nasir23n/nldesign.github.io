@@ -24,6 +24,7 @@
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
+            <button class="nav_toggle"><i class="fa fa-bars"></i></button>
         </div>
     </div>
     
@@ -230,7 +231,7 @@
             <div class="col-md-4 price_card">
                 <div class="price_wrap">
                     <div class="head_element">
-                        <h5 class="mb-20 color_dark">Basic</h5>
+                        <h2 class="mb-20 color_dark">Basic</h2>
                         <h2>$10</h2>
                         <p class="color_normal_ass">BILLING PER MONTH</p>
                     </div>
@@ -249,7 +250,7 @@
             <div class="col-md-4 price_card">
                 <div class="price_wrap">
                     <div class="head_element">
-                        <h5 class="mb-20 color_dark">Standard</h5>
+                        <h2 class="mb-20 color_dark">Standard</h2>
                         <h2>$15</h2>
                         <p class="color_normal_ass">BILLING PER MONTH</p>
                     </div>
@@ -268,7 +269,7 @@
             <div class="col-md-4 price_card">
                 <div class="price_wrap">
                     <div class="head_element">
-                        <h5 class="mb-20 color_dark">Premium</h5>
+                        <h2 class="mb-20 color_dark">Premium</h2>
                         <h2>$20</h2>
                         <p class="color_normal_ass">BILLING PER MONTH</p>
                     </div>
@@ -464,12 +465,11 @@
     </div>
 
     <script>
-        var nav = document.querySelector('.nav_toggle'),
-            targ = document.querySelector('.nav .link');
-        nav.onclick = function () {
+        var nav     = document.querySelector('.nav_toggle'),
+            targ    = document.querySelector('.nav .link');
+        nav.onclick = function() {
             targ.classList.toggle('active');
         }
     </script>
-
 </body>
 </html>
