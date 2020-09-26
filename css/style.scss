@@ -45,7 +45,7 @@ body {
 }
 
 /* ------------------------------------ */
- 
+
 img {
     width: 100%;
     height: auto;
@@ -62,9 +62,11 @@ a:not([href]):not([tabindex]):focus {
     color: inherit;
     text-decoration: none;
 }
+
 ul {
     margin: 0;
 }
+
 label {
     font-size: 1rem;
     user-select: none;
@@ -96,9 +98,11 @@ button,
 [type="submit"] {
     -webkit-appearance: button;
 }
+
 a:hover {
     text-decoration: none;
 }
+
 button {
     border: none;
     outline: none;
@@ -112,15 +116,18 @@ button {
         outline: none;
     }
 }
+
 ::selection {
     background: #289028;
     color: #fff;
 }
+
 // reboot end 
 // $fave: #48bf48;
 $gr: linear-gradient(to right, #2B32B2, #1488CC);
 $fave: #48bf48;
 $fave2: #2196F3;
+
 .nav {
     width: 100%;
     position: fixed;
@@ -130,38 +137,83 @@ $fave2: #2196F3;
     background: #fff;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
     z-index: 9999;
+
     & .container {
         display: flex;
         align-items: center;
         justify-content: space-between;
-         & .logo {
+
+        & .logo {
             font-weight: bold;
             font-size: 22px;
             display: flex;
-            color: #099ddd;
+            color: $fave;
+
             & span:first-child {
-                color: #FFB300;
+                color: #333;
             }
         }
+
         & .link {
-            display: flex; 
+            display: flex;
+            transition: all 0.2s ease-in-out;
+
             & li {
                 & a {
-                    display: block; 
+                    display: block;
                     line-height: 3;
                     padding: 0 10px;
+                    color: $fave;
+                }
+            }
+
+            @media (max-width: 768px) {
+                & {
+                    transform: rotateX(90deg);
+                    transform-origin: top;
+                    flex-direction: column;
+                    position: absolute;
+                    right: 10px;
+                    background: #fff;
+                    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+                    min-width: 200px;
+                    top: 60px;
+
+                    &.active {
+                        transform: rotateX(0);
+                    }
+
+                    & li a {
+                        line-height: 2.4;
+                        border-bottom: 1px solid #eee;
+                    }
                 }
             }
         }
-    } 
-    @media (max-width: 600px) {
-        .link {
+
+        & .nav_toggle {
+            position: relative;
+            padding: 10px;
+            font-size: 22px;
+            color: $fave;
+            background: transparent;
             display: none;
+
+            @media (max-width: 768px) {
+                & {
+                    display: block;
+                    position: absolute;
+                    right: 10px;
+                    border: 1px solid currentColor;
+                    border-radius: 6px;
+                    width: 50px;
+                }
+            }
         }
     }
 }
 
-.banner { 
+.banner {
     width: 100%;
     min-height: 50vh;
     padding-top: 50px;
@@ -170,11 +222,14 @@ $fave2: #2196F3;
     background-size: cover;
     background-position: center;
     padding-bottom: 20px;
+
     & .jumbotron {
         background: transparent;
         padding-top: 100px;
+
         & h1 {
             font-size: 63px;
+
             @media (max-width: 768px) {
                 & {
                     font-size: 40px !important;
@@ -183,12 +238,13 @@ $fave2: #2196F3;
         }
     }
 }
+
 .gtstr {
     border: 2px solid #fff;
     display: inline-block;
     padding: 10px;
     color: #fff;
-    background: #FFB300;
+    background: $fave;
     border-radius: 4px;
     transition: all 0.3s ease-in-out;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
@@ -197,16 +253,20 @@ $fave2: #2196F3;
         background: #ffffff;
         color: $fave;
         text-decoration: none;
+        border: 2px solid #fff;
     }
 }
+
 .heading {
     padding: 50px 10px;
     text-align: center;
+
     & h2 {
         font-size: 40px;
         text-align: center;
         position: relative;
         text-transform: uppercase;
+
         &::after {
             content: '';
             display: block;
@@ -218,6 +278,7 @@ $fave2: #2196F3;
             left: 50%;
             transform: translateX(-50%);
         }
+
         &::before {
             content: '';
             display: block;
@@ -246,6 +307,7 @@ $fave2: #2196F3;
     color: #fff;
     position: relative;
     z-index: 1;
+
     &::before {
         content: '';
         display: block;
@@ -264,12 +326,15 @@ $fave2: #2196F3;
     transition: all 0.3s ease-in-out;
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+
     &:hover {
         border: 2px solid $fave;
     }
+
     & h2 {
         display: flex;
         align-items: center;
+
         & i {
             padding-right: 10px;
         }
@@ -347,15 +412,18 @@ $fave2: #2196F3;
 
         & .txt {
             text-align: center;
+
             & p {
                 color: #808080;
             }
+
             & .gtstr {
                 display: inline-block;
                 box-shadow: none;
                 border-color: $fave;
                 background: #fff;
                 color: $fave;
+
                 &:hover {
                     background: $fave;
                     color: #fff;
@@ -394,45 +462,50 @@ $fave2: #2196F3;
 
 .price_card {
     position: relative;
+
     & .price_wrap {
         text-align: center;
-        padding-top: 30px;
+        // padding-top: 30px;
         margin-bottom: 20px;
         box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
         border-radius: 5px;
         transition: all 0.4s ease-in-out;
+
         &:hover {
             transform: translateY(-10px);
         }
+
         & .head_element {
             padding: 30px 20px;
-            &::after {
-                content: '';
-                display: block;
-                width: 100%;
-                height: 2px;
-                background: #FF9800;
-            }
+            background: $fave;
+            margin-bottom: 10px;
+            color: #fff;
         }
+
         & .price_para {
             padding-bottom: 10px;
+
+            & p {
+                padding: 8px 0;
+                margin: 0;
+            }
         }
-        & .price_para p {
-            padding: 8px 0;
-        }
+
         & .text_color {
-            color: #FF9800;
+            color: $fave;
         }
+
         & .link_b {
             display: block;
             padding: 10px;
             margin: 0 auto;
             margin-bottom: 10px;
-            background: #2B32B2;
+            background: $fave;
             color: #fff;
             border-radius: 4px;
+            margin-top: 10px;
         }
-    }    
+    }
 }
 
 
@@ -443,20 +516,21 @@ $fave2: #2196F3;
     background-position: center;
     position: relative;
     z-index: 0;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, #48bf48, #426717c4);
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.9;
+        z-index: -1;
+    }
 }
 
-.patrn_bg:before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, #512DA8, #711e72);
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.9;
-    z-index: -1;
-}
 
 .ptrn_img {
     width: 100%;
@@ -475,7 +549,8 @@ $fave2: #2196F3;
 
 .bordown {
     margin-bottom: 20px;
-   &::after {
+
+    &::after {
         display: block;
         content: '';
         width: 250px;
@@ -625,38 +700,6 @@ $fave2: #2196F3;
         font-size: 25px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .st_top {
     position: -webkit-sticky;
